@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Verstappen | 4-Time World Champion</title>
+        <style>
+       /* กำหนดตัวแปรสีสไตล์ Red Bull Racing */
+        :root {
+            --f1-red: #e10600;
+            --rb-blue: #061339;
+            --rb-yellow: #ffec00;
+            --dark-bg: #0b0d10;
+            --card-bg: #1a1d23;
+            --text-white: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        /* ส่วนหัวด้านบน (Banner) */
+        header {
+            background: linear-gradient(rgba(6, 19, 57, 0.8), rgba(6, 19, 57, 0.8)), 
+                        url('https://images.unsplash.com/photo-1662071630130-9b69926df49e?q=80&w=2000') no-repeat center/cover;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--f1-red);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--rb-yellow);
+            font-weight: bold;
+        }
+
+        /* กล่องเนื้อหาหลัก */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: var(--f1-red);
+            border-left: 5px solid var(--f1-red);
+            padding-left: 15px;
+            text-transform: uppercase;
+        }
+
+        /* การจัดวางรูปภาพและประวัติ */
+        .profile-flex {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #333;
+        }
+
+        .profile-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .profile-text {
+            flex: 1.5;
+        }
+
+        /* ส่วนตารางสถิติ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #252932;
+            overflow: hidden; /* ให้ border-radius ของแถวทำงาน */
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #3d4451;
+        }
+
+        th {
+            background-color: var(--rb-blue);
+            color: var(--rb-yellow);
+            text-transform: uppercase;
+        }
+
+        /* คลาสคุมขนาดโลโก้ในตาราง */
+        .team-logo {
+            height: 25px;
+            width: auto;
+            vertical-align: middle;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .champion {
+            background-color: rgba(255, 236, 0, 0.05);
+            font-weight: bold;
+        }
+
+        .badge {
+            background: var(--rb-yellow);
+            color: black;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            box-shadow: 0 0 10px rgba(255, 236, 0, 0.3);
+        }
+
+        /* เพิ่มลูกเล่น Hover ให้ตาราง  */
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #2e3440; /* สว่างขึ้นเมื่อชี้ */
+            transform: scale(1.01);    /* ขยายขึ้นเล็กน้อย */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        tbody tr:hover td {
+            color: var(--rb-yellow); /* ตัวอักษรเปลี่ยนเป็นสีเหลืองเมื่อชี้ */
+        }
+
+        tbody tr:hover .team-logo {
+            transform: scale(1.2) rotate(5deg); /* โลโก้ขยายและเอียงนิดๆ */
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* รองรับมือถือ */
+        @media (max-width: 768px) {
+            .profile-flex { flex-direction: column; }
+            header h1 { font-size: 2.5rem; }
+            .container { padding: 20px; margin-top: -30px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Max Verstappen</h1>
+        <p>ORACLE RED BULL RACING | DRIVER #1</p>
+    </header>
+
+    <div class="container">
+        <div class="profile-flex">
+            <div class="profile-img">
+                <img src="https://cdn.images.express.co.uk/img/dynamic/73/590x/2180152_1.jpg" alt="Max Verstappen Portrait">
+            </div>
+            <div class="profile-text">
+                <h2>Biography</h2>
+                <p>
+                    <strong>Max Emilian Verstappen</strong> (born 30 September 1997) is a Dutch racing driver who competes in Formula One for Red Bull Racing. 
+                    He is the son of former Formula One driver Jos Verstappen. 
+                </p>
+                <p>
+                    In 2015, he became the youngest driver to compete in Formula 1 at the age of 17. 
+                    He won his first World Championship in 2021 and has since become one of the most successful drivers in the history of the sport.
+                </p>
+            </div>
+        </div>
+
+        <h2>F1 Career Standings (2015-2025)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Team</th>
+                    <th>World Ranking</th>
+                    <th>Wins</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015</td>
+                    <td>
+                        Toro Rosso 
+                        <img src="https://upload.wikimedia.org/wikipedia/fr/2/21/Logo_Toro_Rosso.JPG" class="team-logo" alt="Toro Rosso">
+                    </td>
+                    <td>12th</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>2016</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>5th</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2017</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>6th</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2018</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>4th</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>3rd</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>3rd</td>
+                    <td>2</td>
+                </tr>
+                <tr class="champion">
+                    <td>2021</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>1st <span class="badge">CHAMPION</span></td>
+                    <td>10</td>
+                </tr>
+                <tr class="champion">
+                    <td>2022</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>1st <span class="badge">CHAMPION</span></td>
+                    <td>15</td>
+                </tr>
+                <tr class="champion">
+                    <td>2023</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>1st <span class="badge">CHAMPION</span></td>
+                    <td>19</td>
+                </tr>
+                <tr class="champion">
+                    <td>2024</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>1st <span class="badge">CHAMPION</span></td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>2025</td>
+                    <td>Red Bull Racing <img src="https://cdn-2.motorsport.com/images/mgl/Y99JQRbY/s8/red-bull-racing-logo-1.jpg" class="team-logo"></td>
+                    <td>2nd</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 40px;">
+            <img src="https://preview.redd.it/max-verstappen-wins-the-2024-formula-one-world-drivers-v0-im5h6htexs2e1.jpeg?auto=webp&s=103c5f0230c533db868470df34ec4a78011c93d4" alt="F1 Race Car" style="width:100%; border-radius:10px;">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Max Verstappen thailand FanClub Page | Data updated as of March 2026. by Jn so cool
+    </footer>
+</body>
+</html>
